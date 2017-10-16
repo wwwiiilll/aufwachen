@@ -1,0 +1,8 @@
+*.jcoDestination
+*.swp
+*.trc
+libsapjco3.so
+project/project
+sapjco3.jar
+target
+~*
