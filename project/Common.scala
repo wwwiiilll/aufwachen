@@ -51,7 +51,7 @@ object Common {
     ),
 
     // Disable fatal warnings for targets where it makes no sense
-    scalacOptions in (Compile, console) ~= (_ filterNot (_ == "-Xfatal-warnings")),
+    scalacOptions in (Compile, console) ~= (_ filterNot (o => o == "-Xfatal-warnings" || o == "-Ywarn-unused-import")),
     scalacOptions in (Test, console) ~= (_ filterNot (_ == "-Xfatal-warnings")),
     scalacOptions in Scapegoat ~= (_ filterNot (_ == "-Xfatal-warnings")),
 
