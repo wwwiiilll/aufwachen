@@ -2,8 +2,6 @@ package aufwachen
 
 import scala.annotation.implicitNotFound
 
-import java.util.Date
-
 import com.sap.conn.jco.JCoRecord
 
 @implicitNotFound("No implicit reader found for type ${A}, try implementing RecordReader[${A}]")
@@ -16,6 +14,12 @@ trait RecordReader[A] { self =>
 
   def flatMap[B](f: A => RecordReader[B]): RecordReader[B] =
     RecordReader[B] { rec => self.read(rec).flatMap(a => f(a).read(rec)) }
+
+  def orElse[AA >: A](other: => RecordReader[AA]): RecordReader[AA] =
+    RecordReader[AA] { rec => self.read(rec) orElse other.read(rec) }
+
+  def zip[B](that: RecordReader[B]): RecordReader[(A, B)] =
+    RecordReader[(A, B)] { rec => self.read(rec) zip that.read(rec) }
 
 }
 
@@ -64,10 +68,15 @@ object RecordParsers {
   def double(index: Int): RecordReader[Double] = RecordReader { rec => success(rec.getDouble(index)) }
   def double(name: String): RecordReader[Double] = RecordReader { rec => success(rec.getDouble(name)) }
 
-  def date(index: Int): RecordReader[Date] = RecordReader { rec => success(rec.getDate(index)) }
-  def date(name: String): RecordReader[Date] = RecordReader { rec => success(rec.getDate(name)) }
+  def date(index: Int): RecordReader[java.util.Date] = RecordReader { rec => success(rec.getDate(index)) }
+  def date(name: String): RecordReader[java.util.Date] = RecordReader { rec => success(rec.getDate(name)) }
 
-  def time(index: Int): RecordReader[Date] = RecordReader { rec => success(rec.getTime(index)) } // TBH what?
-  def time(name: String): RecordReader[Date] = RecordReader { rec => success(rec.getTime(name)) }
+  def time(index: Int): RecordReader[java.util.Date] = RecordReader { rec => success(rec.getTime(index)) } // TBH what?
+  def time(name: String): RecordReader[java.util.Date] = RecordReader { rec => success(rec.getTime(name)) }
+
+  def instant(dateIndex: Int, timeIndex: Int): RecordReader[java.time.Instant] =
+    (date(dateIndex) zip time(timeIndex)) map { case (d, t) => java.time.Instant.ofEpochMilli(d.getTime + t.getTime) }
+  def instant(dateName: String, timeName: String): RecordReader[java.time.Instant] =
+    (date(dateName) zip time(timeName)) map { case (d, t) => java.time.Instant.ofEpochMilli(d.getTime + t.getTime) }
 
 }

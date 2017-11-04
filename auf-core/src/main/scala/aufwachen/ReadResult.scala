@@ -9,12 +9,6 @@ sealed trait ReadResult[+A] {
 
   def fold[X](error: String => X, success: A => X): X
 
-  def getOrElse[AA >: A](orElse: => AA): AA =
-    if (isSuccess) this.get else orElse
-
-  def orElse[AA >: A](other: => ReadResult[AA]): ReadResult[AA] =
-    if (isSuccess) this else other
-
   def map[B](f: A => B): ReadResult[B] = this match {
     case ReadSuccess(a) => ReadSuccess(f(a))
     case e: ReadError => e
@@ -23,6 +17,19 @@ sealed trait ReadResult[+A] {
   def flatMap[B](f: A => ReadResult[B]): ReadResult[B] = this match {
     case ReadSuccess(a) => f(a)
     case e: ReadError => e
+  }
+
+  def getOrElse[AA >: A](orElse: => AA): AA =
+    if (isSuccess) this.get else orElse
+
+  def orElse[AA >: A](other: => ReadResult[AA]): ReadResult[AA] =
+    if (isSuccess) this else other
+
+  def zip[B](that: ReadResult[B]): ReadResult[(A, B)] = (this, that) match {
+    case (ReadSuccess(a), ReadSuccess(b)) => ReadSuccess((a, b))
+    case (ReadError(e1), ReadError(e2)) => ReadError(e1 + e2)
+    case (ReadError(e), _) => ReadError(e)
+    case (_, ReadError(e)) => ReadError(e)
   }
 
   def toOption: Option[A] =
