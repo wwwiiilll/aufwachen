@@ -7,18 +7,14 @@ lazy val root = (project in file("."))
     name := "auf"
   )
   .dependsOn(core)
-  .aggregate(core, scalaz)
+  .aggregate(core)
 
 lazy val core = (project in file("./auf-core"))
   .settings(commonSettings)
   .settings(
-    name := "auf-core"
-  )
+    name := "auf-core",
 
-lazy val scalaz = (project in file("./auf-scalaz"))
-  .settings(commonSettings)
-  .settings(
-    name := "auf-scalaz"
+    libraryDependencies ++= Seq(
+      "org.typelevel" %% "cats-core" % catsVersion
+    )
   )
-  .dependsOn(core)
-  .aggregate(core)

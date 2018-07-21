@@ -1,9 +1,6 @@
 import sbt._
 import sbt.Keys._
 
-import com.sksamuel.scapegoat.sbt.ScapegoatSbtPlugin.autoImport._
-import scoverage.ScoverageKeys._
-
 import Dependencies._
 
 object Common {
@@ -11,8 +8,8 @@ object Common {
   val commonSettings = Seq(
     organization := "net.archwill.aufwachen",
 
-    scalaVersion := "2.12.3",
-    crossScalaVersions := Seq("2.12.3", "2.11.11"),
+    scalaVersion := "2.12.4",
+    crossScalaVersions := Seq("2.12.4", "2.11.11"),
 
     libraryDependencies ++= Seq(
       "org.scalatest" %% "scalatest" % scalaTestVersion,
@@ -20,48 +17,57 @@ object Common {
     ).map(_ % "test"),
 
     libraryDependencies ++= Seq(
-      compilerPlugin("org.psywerx.hairyfotr" %% "linter" % linterVersion)
-    ),
-
-    javacOptions ++= Seq(
-      "-deprecation",
-      "-encoding", "UTF-8",
-      "-source", "1.8",
-      "-target", "1.8",
-      "-Xlint"
+      compilerPlugin("org.spire-math" %% "kind-projector" % kindProjectorVersion)
     ),
 
     scalacOptions ++= Seq(
       "-deprecation",
-      "-encoding", "UTF-8",
+      "-encoding", "utf-8",
+      "-explaintypes",
       "-feature",
       "-language:existentials",
       "-language:higherKinds",
       "-language:implicitConversions",
-      "-target:jvm-1.8",
       "-unchecked",
+      "-Xcheckinit",
       "-Xfatal-warnings",
       "-Xfuture",
-      "-Xlint",
+      "-Xlint:adapted-args",
+      "-Xlint:by-name-right-associative",
+      "-Xlint:constant",
+      "-Xlint:delayedinit-select",
+      "-Xlint:doc-detached",
+      "-Xlint:inaccessible",
+      "-Xlint:infer-any",
+      "-Xlint:missing-interpolator",
+      "-Xlint:nullary-override",
+      "-Xlint:nullary-unit",
+      "-Xlint:option-implicit",
+      "-Xlint:package-object-classes",
+      "-Xlint:poly-implicit-overload",
+      "-Xlint:private-shadow",
+      "-Xlint:stars-align",
+      "-Xlint:type-parameter-shadow",
+      "-Xlint:unsound-match",
       "-Yno-adapted-args",
       "-Ypartial-unification",
       "-Ywarn-dead-code",
+      "-Ywarn-extra-implicit",
+      "-Ywarn-inaccessible",
+      "-Ywarn-infer-any",
+      "-Ywarn-nullary-override",
+      "-Ywarn-nullary-unit",
       "-Ywarn-numeric-widen",
-      "-Ywarn-unused-import"
+      "-Ywarn-unused:implicits",
+      "-Ywarn-unused:imports",
+      "-Ywarn-unused:locals",
+      "-Ywarn-unused:params",
+      "-Ywarn-unused:patvars",
+      "-Ywarn-unused:privates",
+      "-Ywarn-value-discard"
     ),
 
-    // Disable fatal warnings for targets where it makes no sense
-    scalacOptions in (Compile, console) ~= (_ filterNot (o => o == "-Xfatal-warnings" || o == "-Ywarn-unused-import")),
-    scalacOptions in (Test, console) ~= (_ filterNot (_ == "-Xfatal-warnings")),
-    scalacOptions in Scapegoat ~= (_ filterNot (_ == "-Xfatal-warnings")),
-
-    fork in run := true,
-    fork in Test := true,
-    logBuffered in Test := false,
-
-    autoAPIMappings := true,
-
-    scapegoatVersion := "1.3.3"
+    autoAPIMappings := true
   )
 
 }
