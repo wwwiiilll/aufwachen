@@ -2,7 +2,7 @@
 *.swp
 *.trc
 libsapjco3.so
-project/project
+project/project/
 sapjco3.jar
-target
+target/
 ~*
