@@ -191,259 +191,259 @@ object jcorecord {
     implicit def M: Async[M]
 
     def getMetaData: F[JCoMetaData] =
-      Kleisli(r => M.delay(r.getMetaData))
+      Kleisli(v => M.delay(v.getMetaData))
 
     def clear: F[Unit] =
-      Kleisli(r => M.delay(r.clear))
+      Kleisli(v => M.delay(v.clear))
 
     def copyFrom(a: JCoRecord): F[Int] =
-      Kleisli(r => M.delay(r.copyFrom(a)))
+      Kleisli(v => M.delay(v.copyFrom(a)))
 
     def getFieldCount: F[Int] =
-      Kleisli(r => M.delay(r.getFieldCount))
+      Kleisli(v => M.delay(v.getFieldCount))
 
     def getValue(a: Int): F[AnyRef] =
-      Kleisli(r => M.delay(r.getValue(a)))
+      Kleisli(v => M.delay(v.getValue(a)))
 
     def getValue(a: String): F[AnyRef] =
-      Kleisli(r => M.delay(r.getValue(a)))
+      Kleisli(v => M.delay(v.getValue(a)))
 
     def getString(a: Int): F[String] =
-      Kleisli(r => M.delay(r.getString(a)))
+      Kleisli(v => M.delay(v.getString(a)))
 
     def getChar(a: Int): F[Char] =
-      Kleisli(r => M.delay(r.getChar(a)))
+      Kleisli(v => M.delay(v.getChar(a)))
 
     def getByte(a: Int): F[Byte] =
-      Kleisli(r => M.delay(r.getByte(a)))
+      Kleisli(v => M.delay(v.getByte(a)))
 
     def getByte(a: String): F[Byte] =
-      Kleisli(r => M.delay(r.getByte(a)))
+      Kleisli(v => M.delay(v.getByte(a)))
 
     def getFloat(a: Int): F[Float] =
-      Kleisli(r => M.delay(r.getFloat(a)))
+      Kleisli(v => M.delay(v.getFloat(a)))
 
     def getFloat(a: String): F[Float] =
-      Kleisli(r => M.delay(r.getFloat(a)))
+      Kleisli(v => M.delay(v.getFloat(a)))
 
     def getShort(a: Int): F[Short] =
-      Kleisli(r => M.delay(r.getShort(a)))
+      Kleisli(v => M.delay(v.getShort(a)))
 
     def getInt(a: Int): F[Int] =
-      Kleisli(r => M.delay(r.getInt(a)))
+      Kleisli(v => M.delay(v.getInt(a)))
 
     def getLong(a: Int): F[Long] =
-      Kleisli(r => M.delay(r.getLong(a)))
+      Kleisli(v => M.delay(v.getLong(a)))
 
     def getBigInteger(a: Int): F[BigInteger] =
-      Kleisli(r => M.delay(r.getBigInteger(a)))
+      Kleisli(v => M.delay(v.getBigInteger(a)))
 
     def getDouble(a: Int): F[Double] =
-      Kleisli(r => M.delay(r.getDouble(a)))
+      Kleisli(v => M.delay(v.getDouble(a)))
 
     def getBigDecimal(a: Int): F[BigDecimal] =
-      Kleisli(r => M.delay(r.getBigDecimal(a)))
+      Kleisli(v => M.delay(v.getBigDecimal(a)))
 
     def getDate(a: Int): F[Date] =
-      Kleisli(r => M.delay(r.getDate(a)))
+      Kleisli(v => M.delay(v.getDate(a)))
 
     def getTime(a: Int): F[Date] =
-      Kleisli(r => M.delay(r.getTime(a)))
+      Kleisli(v => M.delay(v.getTime(a)))
 
     def getByteArray(a: Int): F[Array[Byte]] =
-      Kleisli(r => M.delay(r.getByteArray(a)))
+      Kleisli(v => M.delay(v.getByteArray(a)))
 
     def getCharArray(a: Int): F[Array[Char]] =
-      Kleisli(r => M.delay(r.getCharArray(a)))
+      Kleisli(v => M.delay(v.getCharArray(a)))
 
     def getBinaryStream(a: Int): F[InputStream] =
-      Kleisli(r => M.delay(r.getBinaryStream(a)))
+      Kleisli(v => M.delay(v.getBinaryStream(a)))
 
     def getCharacterStream(a: Int): F[Reader] =
-      Kleisli(r => M.delay(r.getCharacterStream(a)))
+      Kleisli(v => M.delay(v.getCharacterStream(a)))
 
     def getTable(a: Int): F[JCoTable] =
-      Kleisli(r => M.delay(r.getTable(a)))
+      Kleisli(v => M.delay(v.getTable(a)))
 
     def getStructure(a: Int): F[JCoStructure] =
-      Kleisli(r => M.delay(r.getStructure(a)))
+      Kleisli(v => M.delay(v.getStructure(a)))
 
     def toXML(a: Int): F[String] =
-      Kleisli(r => M.delay(r.toXML(a)))
+      Kleisli(v => M.delay(v.toXML(a)))
 
     def toXML(a: String): F[String] =
-      Kleisli(r => M.delay(r.toXML(a)))
+      Kleisli(v => M.delay(v.toXML(a)))
 
     def toXML: F[String] =
-      Kleisli(r => M.delay(r.toXML))
+      Kleisli(v => M.delay(v.toXML))
 
     def write(a: Int, b: Writer): F[Writer] =
-      Kleisli(r => M.delay(r.write(a, b)))
+      Kleisli(v => M.delay(v.write(a, b)))
 
     def write(a: String, b: Writer): F[Writer] =
-      Kleisli(r => M.delay(r.write(a, b)))
+      Kleisli(v => M.delay(v.write(a, b)))
 
     def setValue(a: Int, b: String): F[Unit] =
-      Kleisli(r => M.delay(r.setValue(a, b)))
+      Kleisli(v => M.delay(v.setValue(a, b)))
 
     def getClassNameOfValue(a: String): F[String] =
-      Kleisli(r => M.delay(r.getClassNameOfValue(a)))
+      Kleisli(v => M.delay(v.getClassNameOfValue(a)))
 
     def getString(a: String): F[String] =
-      Kleisli(r => M.delay(r.getString(a)))
+      Kleisli(v => M.delay(v.getString(a)))
 
     def getChar(a: String): F[Char] =
-      Kleisli(r => M.delay(r.getChar(a)))
+      Kleisli(v => M.delay(v.getChar(a)))
 
     def getShort(a: String): F[Short] =
-      Kleisli(r => M.delay(r.getShort(a)))
+      Kleisli(v => M.delay(v.getShort(a)))
 
     def getInt(a: String): F[Int] =
-      Kleisli(r => M.delay(r.getInt(a)))
+      Kleisli(v => M.delay(v.getInt(a)))
 
     def getLong(a: String): F[Long] =
-      Kleisli(r => M.delay(r.getLong(a)))
+      Kleisli(v => M.delay(v.getLong(a)))
 
     def getBigInteger(a: String): F[BigInteger] =
-      Kleisli(r => M.delay(r.getBigInteger(a)))
+      Kleisli(v => M.delay(v.getBigInteger(a)))
 
     def getDouble(a: String): F[Double] =
-      Kleisli(r => M.delay(r.getDouble(a)))
+      Kleisli(v => M.delay(v.getDouble(a)))
 
     def getBigDecimal(a: String): F[BigDecimal] =
-      Kleisli(r => M.delay(r.getBigDecimal(a)))
+      Kleisli(v => M.delay(v.getBigDecimal(a)))
 
     def getDate(a: String): F[Date] =
-      Kleisli(r => M.delay(r.getDate(a)))
+      Kleisli(v => M.delay(v.getDate(a)))
 
     def getTime(a: String): F[Date] =
-      Kleisli(r => M.delay(r.getTime(a)))
+      Kleisli(v => M.delay(v.getTime(a)))
 
     def getByteArray(a: String): F[Array[Byte]] =
-      Kleisli(r => M.delay(r.getByteArray(a)))
+      Kleisli(v => M.delay(v.getByteArray(a)))
 
     def getCharArray(a: String): F[Array[Char]] =
-      Kleisli(r => M.delay(r.getCharArray(a)))
+      Kleisli(v => M.delay(v.getCharArray(a)))
 
     def getBinaryStream(a: String): F[InputStream] =
-      Kleisli(r => M.delay(r.getBinaryStream(a)))
+      Kleisli(v => M.delay(v.getBinaryStream(a)))
 
     def getCharacterStream(a: String): F[Reader] =
-      Kleisli(r => M.delay(r.getCharacterStream(a)))
+      Kleisli(v => M.delay(v.getCharacterStream(a)))
 
     def getTable(a: String): F[JCoTable] =
-      Kleisli(r => M.delay(r.getTable(a)))
+      Kleisli(v => M.delay(v.getTable(a)))
 
     def getStructure(a: String): F[JCoStructure] =
-      Kleisli(r => M.delay(r.getStructure(a)))
+      Kleisli(v => M.delay(v.getStructure(a)))
 
     def setValue(a: Int, b: Char): F[Unit] =
-      Kleisli(r => M.delay(r.setValue(a, b)))
+      Kleisli(v => M.delay(v.setValue(a, b)))
 
     def setValue(a: Int, b: Array[Char]): F[Unit] =
-      Kleisli(r => M.delay(r.setValue(a, b)))
+      Kleisli(v => M.delay(v.setValue(a, b)))
 
     def setValue(a: Int, b: Array[Char], c: Int, d: Int): F[Unit] =
-      Kleisli(r => M.delay(r.setValue(a, b, c, d)))
+      Kleisli(v => M.delay(v.setValue(a, b, c, d)))
 
     def setValue(a: Int, b: Short): F[Unit] =
-      Kleisli(r => M.delay(r.setValue(a, b)))
+      Kleisli(v => M.delay(v.setValue(a, b)))
 
     def setValue(a: Int, b: Int): F[Unit] =
-      Kleisli(r => M.delay(r.setValue(a, b)))
+      Kleisli(v => M.delay(v.setValue(a, b)))
 
     def setValue(a: Int, b: Long): F[Unit] =
-      Kleisli(r => M.delay(r.setValue(a, b)))
+      Kleisli(v => M.delay(v.setValue(a, b)))
 
     def setValue(a: Int, b: Double): F[Unit] =
-      Kleisli(r => M.delay(r.setValue(a, b)))
+      Kleisli(v => M.delay(v.setValue(a, b)))
 
     def setValue(a: Int, b: Array[Byte]): F[Unit] =
-      Kleisli(r => M.delay(r.setValue(a, b)))
+      Kleisli(v => M.delay(v.setValue(a, b)))
 
     def setValue(a: Int, b: JCoStructure): F[Unit] =
-      Kleisli(r => M.delay(r.setValue(a, b)))
+      Kleisli(v => M.delay(v.setValue(a, b)))
 
     def setValue(a: Int, b: JCoTable): F[Unit] =
-      Kleisli(r => M.delay(r.setValue(a, b)))
+      Kleisli(v => M.delay(v.setValue(a, b)))
 
     def setValue(a: Int, b: AnyRef): F[Unit] =
-      Kleisli(r => M.delay(r.setValue(a, b)))
+      Kleisli(v => M.delay(v.setValue(a, b)))
 
     def setValue(a: String, b: String): F[Unit] =
-      Kleisli(r => M.delay(r.setValue(a, b)))
+      Kleisli(v => M.delay(v.setValue(a, b)))
 
     def setValue(a: String, b: Array[Char]): F[Unit] =
-      Kleisli(r => M.delay(r.setValue(a, b)))
+      Kleisli(v => M.delay(v.setValue(a, b)))
 
     def setValue(a: String, b: Array[Char], c: Int, d: Int): F[Unit] =
-      Kleisli(r => M.delay(r.setValue(a, b, c, d)))
+      Kleisli(v => M.delay(v.setValue(a, b, c, d)))
 
     def setValue(a: String, b: Char): F[Unit] =
-      Kleisli(r => M.delay(r.setValue(a, b)))
+      Kleisli(v => M.delay(v.setValue(a, b)))
 
     def setValue(a: String, b: Short): F[Unit] =
-      Kleisli(r => M.delay(r.setValue(a, b)))
+      Kleisli(v => M.delay(v.setValue(a, b)))
 
     def setValue(a: String, b: Int): F[Unit] =
-      Kleisli(r => M.delay(r.setValue(a, b)))
+      Kleisli(v => M.delay(v.setValue(a, b)))
 
     def setValue(a: String, b: Long): F[Unit] =
-      Kleisli(r => M.delay(r.setValue(a, b)))
+      Kleisli(v => M.delay(v.setValue(a, b)))
 
     def setValue(a: String, b: Double): F[Unit] =
-      Kleisli(r => M.delay(r.setValue(a, b)))
+      Kleisli(v => M.delay(v.setValue(a, b)))
 
     def setValue(a: Int, b: Float): F[Unit] =
-      Kleisli(r => M.delay(r.setValue(a, b)))
+      Kleisli(v => M.delay(v.setValue(a, b)))
 
     def setValue(a: String, b: Float): F[Unit] =
-      Kleisli(r => M.delay(r.setValue(a, b)))
+      Kleisli(v => M.delay(v.setValue(a, b)))
 
     def setValue(a: Int, b: BigDecimal): F[Unit] =
-      Kleisli(r => M.delay(r.setValue(a, b)))
+      Kleisli(v => M.delay(v.setValue(a, b)))
 
     def setValue(a: String, b: BigDecimal): F[Unit] =
-      Kleisli(r => M.delay(r.setValue(a, b)))
+      Kleisli(v => M.delay(v.setValue(a, b)))
 
     def setValue(a: Int, b: Byte): F[Unit] =
-      Kleisli(r => M.delay(r.setValue(a, b)))
+      Kleisli(v => M.delay(v.setValue(a, b)))
 
     def setValue(a: String, b: Byte): F[Unit] =
-      Kleisli(r => M.delay(r.setValue(a, b)))
+      Kleisli(v => M.delay(v.setValue(a, b)))
 
     def setValue(a: String, b: Array[Byte]): F[Unit] =
-      Kleisli(r => M.delay(r.setValue(a, b)))
+      Kleisli(v => M.delay(v.setValue(a, b)))
 
     def setValue(a: String, b: JCoStructure): F[Unit] =
-      Kleisli(r => M.delay(r.setValue(a, b)))
+      Kleisli(v => M.delay(v.setValue(a, b)))
 
     def setValue(a: String, b: JCoTable): F[Unit] =
-      Kleisli(r => M.delay(r.setValue(a, b)))
+      Kleisli(v => M.delay(v.setValue(a, b)))
 
     def setValue(a: String, b: AnyRef): F[Unit] =
-      Kleisli(r => M.delay(r.setValue(a, b)))
+      Kleisli(v => M.delay(v.setValue(a, b)))
 
     def getAbapObject(a: String): F[JCoAbapObject] =
-      Kleisli(r => M.delay(r.getAbapObject(a)))
+      Kleisli(v => M.delay(v.getAbapObject(a)))
 
     def getAbapObject(a: Int): F[JCoAbapObject] =
-      Kleisli(r => M.delay(r.getAbapObject(a)))
+      Kleisli(v => M.delay(v.getAbapObject(a)))
 
     def setValue(a: String, b: JCoAbapObject): F[Unit] =
-      Kleisli(r => M.delay(r.setValue(a, b)))
+      Kleisli(v => M.delay(v.setValue(a, b)))
 
     def setValue(a: Int, b: JCoAbapObject): F[Unit] =
-      Kleisli(r => M.delay(r.setValue(a, b)))
+      Kleisli(v => M.delay(v.setValue(a, b)))
 
     def isInitialized(a: String): F[Boolean] =
-      Kleisli(r => M.delay(r.isInitialized(a)))
+      Kleisli(v => M.delay(v.isInitialized(a)))
 
     def isInitialized(a: Int): F[Boolean] =
-      Kleisli(r => M.delay(r.isInitialized(a)))
+      Kleisli(v => M.delay(v.isInitialized(a)))
 
     def getFieldIterator: F[JCoFieldIterator] =
-      Kleisli(r => M.delay(r.getFieldIterator))
+      Kleisli(v => M.delay(v.getFieldIterator))
 
   }
 

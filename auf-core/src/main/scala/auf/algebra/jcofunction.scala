@@ -45,46 +45,46 @@ object jcofunction {
     type F[A] = JCoFunctionK[M, A]
 
     def getName: F[String] =
-      Kleisli(f => M.delay(f.getName))
+      Kleisli(v => M.delay(v.getName))
 
     def getImportParameterList: F[JCoParameterList] =
-      Kleisli(f => M.delay(f.getImportParameterList))
+      Kleisli(v => M.delay(v.getImportParameterList))
 
     def getExportParameterList: F[JCoParameterList] =
-      Kleisli(f => M.delay(f.getExportParameterList))
+      Kleisli(v => M.delay(v.getExportParameterList))
 
     def getChangingParameterList: F[JCoParameterList] =
-      Kleisli(f => M.delay(f.getChangingParameterList))
+      Kleisli(v => M.delay(v.getChangingParameterList))
 
     def getTableParameterList: F[JCoParameterList] =
-      Kleisli(f => M.delay(f.getTableParameterList))
+      Kleisli(v => M.delay(v.getTableParameterList))
 
     def getExceptionList: F[Array[AbapException]] =
-      Kleisli(f => M.delay(f.getExceptionList))
+      Kleisli(v => M.delay(v.getExceptionList))
 
     def getException(a: String): F[AbapException] =
-      Kleisli(f => M.delay(f.getException(a)))
+      Kleisli(v => M.delay(v.getException(a)))
 
     def setAbapClassExceptionMode(a: AbapClassException.Mode): F[Unit] =
-      Kleisli(f => M.delay(f.setAbapClassExceptionMode(a)))
+      Kleisli(v => M.delay(v.setAbapClassExceptionMode(a)))
 
     def isAbapClassExceptionEnabled: F[Boolean] =
-      Kleisli(f => M.delay(f.isAbapClassExceptionEnabled))
+      Kleisli(v => M.delay(v.isAbapClassExceptionEnabled))
 
     def execute(a: JCoDestination): F[Unit] =
-      Kleisli(f => M.delay(f.execute(a)))
+      Kleisli(v => M.delay(v.execute(a)))
 
     def execute(a: JCoDestination, b: String): F[Unit] =
-      Kleisli(f => M.delay(f.execute(a, b)))
+      Kleisli(v => M.delay(v.execute(a, b)))
 
     def execute(a: JCoDestination, b: String, c: String): F[Unit] =
-      Kleisli(f => M.delay(f.execute(a, b, c)))
+      Kleisli(v => M.delay(v.execute(a, b, c)))
 
     def toXML: F[String] =
-      Kleisli(f => M.delay(f.toXML))
+      Kleisli(v => M.delay(v.toXML))
 
     def getFunctionTemplate: F[JCoFunctionTemplate] =
-      Kleisli(f => M.delay(f.getFunctionTemplate))
+      Kleisli(v => M.delay(v.getFunctionTemplate))
 
   }
 

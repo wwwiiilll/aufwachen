@@ -118,151 +118,151 @@ object jcodestination {
     type F[A] = JCoDestinationK[M, A]
 
     def getDestinationName: F[String] =
-      Kleisli(d => M.delay(d.getDestinationName))
+      Kleisli(v => M.delay(v.getDestinationName))
 
     def getDestinationID: F[String] =
-      Kleisli(d => M.delay(d.getDestinationID))
+      Kleisli(v => M.delay(v.getDestinationID))
 
     def getType: F[Char] =
-      Kleisli(d => M.delay(d.getType))
+      Kleisli(v => M.delay(v.getType))
 
     def getApplicationServerHost: F[String] =
-      Kleisli(d => M.delay(d.getApplicationServerHost))
+      Kleisli(v => M.delay(v.getApplicationServerHost))
 
     def getSAPRouterString: F[String] =
-      Kleisli(d => M.delay(d.getSAPRouterString))
+      Kleisli(v => M.delay(v.getSAPRouterString))
 
     def getGatewayHost: F[String] =
-      Kleisli(d => M.delay(d.getGatewayHost))
+      Kleisli(v => M.delay(v.getGatewayHost))
 
     def getGatewayService: F[String] =
-      Kleisli(d => M.delay(d.getGatewayService))
+      Kleisli(v => M.delay(v.getGatewayService))
 
     def getSystemNumber: F[String] =
-      Kleisli(d => M.delay(d.getSystemNumber))
+      Kleisli(v => M.delay(v.getSystemNumber))
 
     def getLogonGroup: F[String] =
-      Kleisli(d => M.delay(d.getLogonGroup))
+      Kleisli(v => M.delay(v.getLogonGroup))
 
     def getMessageServerHost: F[String] =
-      Kleisli(d => M.delay(d.getMessageServerHost))
+      Kleisli(v => M.delay(v.getMessageServerHost))
 
     def getMessageServerService: F[String] =
-      Kleisli(d => M.delay(d.getMessageServerService))
+      Kleisli(v => M.delay(v.getMessageServerService))
 
     def getR3Name: F[String] =
-      Kleisli(d => M.delay(d.getR3Name))
+      Kleisli(v => M.delay(v.getR3Name))
 
     def getTPHost: F[String] =
-      Kleisli(d => M.delay(d.getTPHost))
+      Kleisli(v => M.delay(v.getTPHost))
 
     def getTPName: F[String] =
-      Kleisli(d => M.delay(d.getTPName))
+      Kleisli(v => M.delay(v.getTPName))
 
     def getSncLibrary: F[String] =
-      Kleisli(d => M.delay(d.getSncLibrary))
+      Kleisli(v => M.delay(v.getSncLibrary))
 
     def getSncMode: F[String] =
-      Kleisli(d => M.delay(d.getSncMode))
+      Kleisli(v => M.delay(v.getSncMode))
 
     def getSncMyName: F[String] =
-      Kleisli(d => M.delay(d.getSncMyName))
+      Kleisli(v => M.delay(v.getSncMyName))
 
     def getSncPartnerName: F[String] =
-      Kleisli(d => M.delay(d.getSncPartnerName))
+      Kleisli(v => M.delay(v.getSncPartnerName))
 
     def getSncQOP: F[String] =
-      Kleisli(d => M.delay(d.getSncQOP))
+      Kleisli(v => M.delay(v.getSncQOP))
 
     def getSncSSO: F[String] =
-      Kleisli(d => M.delay(d.getSncSSO))
+      Kleisli(v => M.delay(v.getSncSSO))
 
     def getAliasUser: F[String] =
-      Kleisli(d => M.delay(d.getAliasUser))
+      Kleisli(v => M.delay(v.getAliasUser))
 
     def getClient: F[String] =
-      Kleisli(d => M.delay(d.getClient))
+      Kleisli(v => M.delay(v.getClient))
 
     def getLanguage: F[String] =
-      Kleisli(d => M.delay(d.getLanguage))
+      Kleisli(v => M.delay(v.getLanguage))
 
     def getUser: F[String] =
-      Kleisli(d => M.delay(d.getUser))
+      Kleisli(v => M.delay(v.getUser))
 
     def getLogonCheck: F[String] =
-      Kleisli(d => M.delay(d.getLogonCheck))
+      Kleisli(v => M.delay(v.getLogonCheck))
 
     def getExternalIDData: F[String] =
-      Kleisli(d => M.delay(d.getExternalIDData))
+      Kleisli(v => M.delay(v.getExternalIDData))
 
     def getExternalIDType: F[String] =
-      Kleisli(d => M.delay(d.getExternalIDType))
+      Kleisli(v => M.delay(v.getExternalIDType))
 
     def getPeakLimit: F[Int] =
-      Kleisli(d => M.delay(d.getPeakLimit))
+      Kleisli(v => M.delay(v.getPeakLimit))
 
     def getPoolCapacity: F[Int] =
-      Kleisli(d => M.delay(d.getPoolCapacity))
+      Kleisli(v => M.delay(v.getPoolCapacity))
 
     def getExpirationTime: F[Long] =
-      Kleisli(d => M.delay(d.getExpirationTime))
+      Kleisli(v => M.delay(v.getExpirationTime))
 
     def getExpirationCheckPeriod: F[Long] =
-      Kleisli(d => M.delay(d.getExpirationCheckPeriod))
+      Kleisli(v => M.delay(v.getExpirationCheckPeriod))
 
     def getMaxGetClientTime: F[Long] =
-      Kleisli(d => M.delay(d.getMaxGetClientTime))
+      Kleisli(v => M.delay(v.getMaxGetClientTime))
 
     def getProperties: F[Properties] =
-      Kleisli(d => M.delay(d.getProperties))
+      Kleisli(v => M.delay(v.getProperties))
 
     def getAttributes: F[JCoAttributes] =
-      Kleisli(d => M.delay(d.getAttributes))
+      Kleisli(v => M.delay(v.getAttributes))
 
     def getRepository: F[JCoRepository] =
-      Kleisli(d => M.delay(d.getRepository))
+      Kleisli(v => M.delay(v.getRepository))
 
     def getRepositoryUser: F[String] =
-      Kleisli(d => M.delay(d.getRepositoryUser))
+      Kleisli(v => M.delay(v.getRepositoryUser))
 
     def createCustomDestination: F[JCoCustomDestination] =
-      Kleisli(d => M.delay(d.createCustomDestination))
+      Kleisli(v => M.delay(v.createCustomDestination))
 
     def confirmTID(a: String): F[Unit] =
-      Kleisli(d => M.delay(d.confirmTID(a)))
+      Kleisli(v => M.delay(v.confirmTID(a)))
 
     def createTID: F[String] =
-      Kleisli(d => M.delay(d.createTID))
+      Kleisli(v => M.delay(v.createTID))
 
     def confirmFunctionUnit(a: JCoUnitIdentifier): F[Unit] =
-      Kleisli(d => M.delay(d.confirmFunctionUnit(a)))
+      Kleisli(v => M.delay(v.confirmFunctionUnit(a)))
 
     def getFunctionUnitState(a: JCoUnitIdentifier): F[JCoFunctionUnitState] =
-      Kleisli(d => M.delay(d.getFunctionUnitState(a)))
+      Kleisli(v => M.delay(v.getFunctionUnitState(a)))
 
     def setThroughput(a: JCoThroughput): F[Unit] =
-      Kleisli(d => M.delay(d.setThroughput(a)))
+      Kleisli(v => M.delay(v.setThroughput(a)))
 
     def getThroughput: F[JCoThroughput] =
-      Kleisli(d => M.delay(d.getThroughput))
+      Kleisli(v => M.delay(v.getThroughput))
 
     def removeThroughput: F[Unit] =
-      Kleisli(d => M.delay(d.removeThroughput))
+      Kleisli(v => M.delay(v.removeThroughput))
 
     def ping: F[Unit] =
-      Kleisli(d => M.delay(d.ping))
+      Kleisli(v => M.delay(v.ping))
 
     def isValid: F[Boolean] =
-      Kleisli(d => M.delay(d.isValid))
+      Kleisli(v => M.delay(v.isValid))
 
     def changePassword(a: String, b: String): F[Unit] =
-      Kleisli(d => M.delay(d.changePassword(a, b)))
+      Kleisli(v => M.delay(v.changePassword(a, b)))
 
     def getMonitor: F[JCoDestinationMonitor] =
-      Kleisli(d => M.delay(d.getMonitor))
+      Kleisli(v => M.delay(v.getMonitor))
 
     def getRepositoryDestinationMonitor: F[JCoDestinationMonitor] =
-      Kleisli(d => M.delay(d.getRepositoryDestinationMonitor))
+      Kleisli(v => M.delay(v.getRepositoryDestinationMonitor))
 
   }
 

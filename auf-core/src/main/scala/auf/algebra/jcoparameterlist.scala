@@ -29,22 +29,22 @@ object jcoparameterlist {
   ) extends JCoParameterListAlg[JCoParameterListK[M, ?]] with jcorecord.JCoRecordInterpreter[JCoParameterList, M] {
 
     def getListMetaData: F[JCoListMetaData] =
-      Kleisli(p => M.delay(p.getListMetaData))
+      Kleisli(v => M.delay(v.getListMetaData))
 
     def getParameterFieldIterator: F[JCoParameterFieldIterator] =
-      Kleisli(p => M.delay(p.getParameterFieldIterator))
+      Kleisli(v => M.delay(v.getParameterFieldIterator))
 
     def isActive(a: Int): F[Boolean] =
-      Kleisli(p => M.delay(p.isActive(a)))
+      Kleisli(v => M.delay(v.isActive(a)))
 
     def isActive(a: String): F[Boolean] =
-      Kleisli(p => M.delay(p.isActive(a)))
+      Kleisli(v => M.delay(v.isActive(a)))
 
     def setActive(a: Int, b: Boolean): F[Unit] =
-      Kleisli(p => M.delay(p.setActive(a, b)))
+      Kleisli(v => M.delay(v.setActive(a, b)))
 
     def setActive(a: String, b: Boolean): F[Unit] =
-      Kleisli(p => M.delay(p.setActive(a, b)))
+      Kleisli(v => M.delay(v.setActive(a, b)))
 
   }
 

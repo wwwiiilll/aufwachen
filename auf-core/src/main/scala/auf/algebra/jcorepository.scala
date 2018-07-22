@@ -58,61 +58,61 @@ object jcorepository {
     type F[A] = JCoRepositoryK[M, A]
 
     def getName: F[String] =
-      Kleisli(r => M.delay(r.getName))
+      Kleisli(v => M.delay(v.getName))
 
     def getFunctionTemplate(a: String): F[JCoFunctionTemplate] =
-      Kleisli(r => M.delay(r.getFunctionTemplate(a)))
+      Kleisli(v => M.delay(v.getFunctionTemplate(a)))
 
     def getFunction(a: String): F[JCoFunction] =
-      Kleisli(r => M.delay(r.getFunction(a)))
+      Kleisli(v => M.delay(v.getFunction(a)))
 
     def getRequest(a: String): F[JCoRequest] =
-      Kleisli(r => M.delay(r.getRequest(a)))
+      Kleisli(v => M.delay(v.getRequest(a)))
 
     def getFunctionInterface(a: String): F[JCoListMetaData] =
-      Kleisli(r => M.delay(r.getFunctionInterface(a)))
+      Kleisli(v => M.delay(v.getFunctionInterface(a)))
 
     def getRecordMetaData(a: String): F[JCoRecordMetaData] =
-      Kleisli(r => M.delay(r.getRecordMetaData(a)))
+      Kleisli(v => M.delay(v.getRecordMetaData(a)))
 
     def getStructureDefinition(a: String): F[JCoRecordMetaData] =
-      Kleisli(r => M.delay(r.getStructureDefinition(a)))
+      Kleisli(v => M.delay(v.getStructureDefinition(a)))
 
     def getClassMetaData(a: String): F[JCoClassMetaData] =
-      Kleisli(r => M.delay(r.getClassMetaData(a)))
+      Kleisli(v => M.delay(v.getClassMetaData(a)))
 
     def removeFunctionTemplateFromCache(a: String): F[Unit] =
-      Kleisli(r => M.delay(r.removeFunctionTemplateFromCache(a)))
+      Kleisli(v => M.delay(v.removeFunctionTemplateFromCache(a)))
 
     def removeRecordMetaDataFromCache(a: String): F[Unit] =
-      Kleisli(r => M.delay(r.removeRecordMetaDataFromCache(a)))
+      Kleisli(v => M.delay(v.removeRecordMetaDataFromCache(a)))
 
     def removeClassMetaDataFromCache(a: String): F[Unit] =
-      Kleisli(r => M.delay(r.removeClassMetaDataFromCache(a)))
+      Kleisli(v => M.delay(v.removeClassMetaDataFromCache(a)))
 
     def getCachedFunctionTemplateNames: F[Array[String]] =
-      Kleisli(r => M.delay(r.getCachedFunctionTemplateNames))
+      Kleisli(v => M.delay(v.getCachedFunctionTemplateNames))
 
     def getCachedRecordMetaDataNames: F[Array[String]] =
-      Kleisli(r => M.delay(r.getCachedRecordMetaDataNames))
+      Kleisli(v => M.delay(v.getCachedRecordMetaDataNames))
 
     def getCachedClassMetaDataNames: F[Array[String]] =
-      Kleisli(r => M.delay(r.getCachedClassMetaDataNames))
+      Kleisli(v => M.delay(v.getCachedClassMetaDataNames))
 
     def isUnicode: F[Boolean] =
-      Kleisli(r => M.delay(r.isUnicode))
+      Kleisli(v => M.delay(v.isUnicode))
 
     def clear: F[Unit] =
-      Kleisli(r => M.delay(r.clear))
+      Kleisli(v => M.delay(v.clear))
 
     def getMonitor: F[JCoRepositoryMonitor] =
-      Kleisli(r => M.delay(r.getMonitor))
+      Kleisli(v => M.delay(v.getMonitor))
 
     def load(a: Reader): F[Unit] =
-      Kleisli(r => M.delay(r.load(a)))
+      Kleisli(v => M.delay(v.load(a)))
 
     def save(a: Writer): F[Unit] =
-      Kleisli(r => M.delay(r.save(a)))
+      Kleisli(v => M.delay(v.save(a)))
 
   }
 
