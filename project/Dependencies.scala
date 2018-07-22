@@ -5,6 +5,7 @@ object Dependencies {
 
   val catsVersion = "1.1.0"
   val catsEffVersion = "0.10.1"
+  val shapelessVersion = "2.3.3"
 
   val kindProjectorVersion = "0.9.7"
 
